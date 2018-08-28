@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #3f00b3;">
+    <a class="col-xs-4 navbar-brand">
+        <img src="./../logo.png">
+    </a>
+
+    <ul class=" col-xs-4 navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" routerLink="/"><font color="white">≡Sprint</font><span class="sr-only">(current)</span></a></li>
+    </ul>
+
+    <form class="form-inline">
+        <span class="navbar-text" *ngIf="!auth.isAuthenticated()" (click)="auth.login()">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login"><font color="white">Login</font></a>
+                </li>
+            </ul>
+        </span>
+
+        <span class="navbar-text" *ngIf="auth.isAuthenticated()">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/sprint"><font color="white">Sprints</font></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/logout" (click)="auth.logout()"><font color="white">Logout</font></a>
+                </li>
+            </ul>
+        </span>
+    </form>
+
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,45 @@
+<p>
+  Progress
+</p>
+
+<circle-progress #circleProgress [percent]="options.percent" [radius]="options.radius" [subtitleFormat]="options.subtitleFormat"
+  [space]="options.space" [outerStrokeWidth]="options.outerStrokeWidth" [innerStrokeWidth]="options.innerStrokeWidth" [animationDuration]="options.animationDuration"
+  [outerStrokeColor]="options.outerStrokeColor" [innerStrokeColor]="options.innerStrokeColor" [backgroundColor]="options.backgroundColor"
+  [backgroundOpacity]="options.backgroundOpacity" [class]="'center-block cursor-pointer'" [animation]="options.animation" [backgroundStroke]="options.backgroundStroke"
+  [backgroundStrokeWidth]="options.backgroundStrokeWidth" [backgroundPadding]="options.backgroundPadding" [animateTitle]="options.animateTitle"
+  [unitsFontSize]="options.unitsFontSize" [unitsColor]="options.unitsColor" [titleColor]="options.titleColor" [titleFontSize]="options.titleFontSize"
+  [subtitleColor]="options.subtitleColor" [subtitleFontSize]="options.subtitleFontSize" [showTitle]="options.showTitle" [showSubtitle]="options.showSubtitle"
+  [showUnits]="options.showUnits" [titleFontSize]="options.titleFontSize" [unitsFontSize]="options.unitsFontSize" [subtitleFontSize]="options.subtitleFontSize"
+  [outerStrokeLinecap]="options.outerStrokeLinecap" [showBackground]="options.showBackground" [showInnerStroke]="options.showInnerStroke"
+  [maxPercent]="options.maxPercent" [toFixed]="options.toFixed" [clockwise]="options.clockwise" [title]="options.title" [responsive]="options.responsive"
+  [startFromZero]=false>
+</circle-progress>
+
+<p>Focus fully on your task</p>
+
+<div class="form-group">
+  <div class="col-sm-10">
+    <button type="submit" class="btn btn-outline-danger" data-toggle="modal" data-target="#onhold">Stop</button>
+  </div>
+</div>
+
+
+<div class="modal fade" id="onhold" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLongTitle">On hold. Cancel sprint?</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-footer">
+        <form (ngSubmit)="stopSprint()" #stopSprintForm="ngForm">
+          <button type="submit" class="btn btn-danger">YES</button>
+        </form>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">NO</button>
+      </div>
+    </div>
+  </div>
+</div>

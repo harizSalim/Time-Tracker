@@ -1,0 +1,22 @@
+<br>
+<nav class="nav">
+  <form (ngSubmit)="navigationPast()" #newsprintForm="ngForm">
+    <button type="submit" class="nav-link btn btn-light">Past Sprints </button>
+  </form>
+  <form (ngSubmit)="navigationNew()" #newsprintForm="ngForm">
+    <button type="submit" class="nav-link btn btn-light">New Sprint </button>
+  </form>
+</nav>
+<hr width="100%" color="midnightblue" size="1">
+<br>
+
+<div [hidden]="!pastpage">
+  <app-pastsprints></app-pastsprints>
+</div>
+
+<div [hidden]="pastpage">
+  <app-newsprint></app-newsprint>
+</div>
+
+<p>Logged in as {{username}}</p>
+<router-outlet></router-outlet>

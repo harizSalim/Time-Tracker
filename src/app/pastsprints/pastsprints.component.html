@@ -1,0 +1,52 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Length</th>
+      <th scope="col">Status</th>
+      <th scope="col">Date</th>
+      <th scope="col">Start</th>
+      <th scope="col">Finish</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sprint of sprints">
+      <td>{{sprint.duration}}</td>
+      <td>{{sprint.status}} {{sprint.progress}}%</td>
+      <td>{{sprint.createdAt}}</td>
+      <td>{{sprint.startedAt}}</td>
+      <td>{{sprint.finishedAt}}</td>
+      <td>{{sprint.description}}</td>
+    </tr>
+</table>
+
+<div class="form-group">
+  <div class="col-sm-10">
+    <button type="submit" class="btn btn-outline-danger" data-toggle="modal" data-target="#areyousure">Delete all data</button>
+  </div>
+</div>
+
+<div class="modal fade" id="areyousure" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLongTitle">Deletion is irreversible. Are you sure?</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>The only information concerning your user that we store are your past sprints. We do not store information about
+          your user itself.</p>
+        <p>Delete to eliminate all records.</p>
+      </div>
+      <div class="modal-footer">
+        <form (ngSubmit)="deleteUserSprints()" #deletesprintForm="ngForm" onclick="$('.modal').modal('hide')">
+          <button type="submit" class="btn btn-danger">YES</button>
+        </form>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">NO</button>
+
+      </div>
+    </div>
+  </div>
+</div>

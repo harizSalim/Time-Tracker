@@ -1,12 +1,36 @@
 <table class="table" style="width: 95%; box-sizing: border-box; margin: auto; right: 2%;  left: 2%;">
   <thead>
     <tr>
-      <th scope="col" width='10%'>Length</th>
-      <th scope="col" width='8%'>Status</th>
-      <th scope="col" width='8%'>Date</th>
-      <th scope="col" width='8%'>Start</th>
-      <th scope="col" width='8%'>Finish</th>
-      <th scope="col" width='60%'>Description</th>
+      <th scope="col" width='10%'>
+        <form (ngSubmit)="sortByDuration()" #sortDurationForm="ngForm">
+          <button type="submit" class="btn btn-light" style="width:100%; text-align: left">Length</button>
+        </form>
+      </th>
+      <th scope="col" width='8%'>
+        <form (ngSubmit)="sortByStatus()" #sortStatusForm="ngForm">
+          <button type="submit" class="btn btn-light" style="width:100%; text-align: left">Status</button>
+        </form>
+      </th>
+      <th scope="col" width='8%'>
+        <form (ngSubmit)="sortByCreation()" #sortCreationForm="ngForm">
+          <button type="submit" class="btn btn-light" style="width:100%; text-align: left">Date</button>
+        </form>
+      </th>
+      <th scope="col" width='8%'>
+        <form (ngSubmit)="sortByStart()" #sortStartForm="ngForm">
+          <button type="submit" class="btn btn-light" style="width:100%; text-align: left">Start</button>
+        </form>
+      </th>
+      <th scope="col" width='8%'>
+        <form (ngSubmit)="sortByFinish()" #sortFinishForm="ngForm">
+          <button type="submit" class="btn btn-light" style="width:100%; text-align: left">Finish</button>
+        </form>
+      </th>
+      <th scope="col" width='60%'>
+        <form (ngSubmit)="sortByDescription()" #sortDescriptionForm="ngForm">
+          <button type="submit" class="btn btn-light" style="width:100%; text-align: left">Description</button>
+        </form>
+      </th>
     </tr>
   </thead>
   <tbody>

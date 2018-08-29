@@ -50,4 +50,28 @@ export class PastsprintsComponent implements OnInit {
     this.router.navigate(['/sprint']);
   }
 
+  sortByDuration() {
+    return this.sprints.sort((a, b) => a.duration < b.duration ? -1 : 1);
+  }
+
+  sortByStatus() {
+    return this.sprints.sort((a, b) => a.status < b.status ? -1 : 1);
+  }
+
+  sortByCreation() {
+    return this.sprints.sort((a, b) => new Date(a.createdAt) < new Date(b.createdAt) ? -1 : 1);
+  }
+
+  sortByStart() {
+    return this.sprints.sort((a, b) => new Date(a.startedAt) < new Date(b.startedAt) ? -1 : 1);
+  }
+
+  sortByFinish() {
+    return this.sprints.sort((a, b) => new Date(a.finishedAt) < new Date(b.finishedAt) ? -1 : 1);
+  }
+
+  sortByDescription() {
+    return this.sprints.sort((a, b) => a.description < b.description ? -1 : 1);
+  }
+
 }

@@ -32,6 +32,7 @@ export class FinishedModalComponent {
     localStorage.removeItem('finishedSprint');
   }
 
+  // Return the duration th show it int the dialog box
   get duration(): any {
     return (JSON.parse(localStorage.getItem('finishedSprint'))).duration;
   }

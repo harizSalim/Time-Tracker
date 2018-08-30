@@ -2,7 +2,7 @@
 
 Execution Instructions :
 
-1) GO into the repo
+1) Go into the repo
 
 2) In a first cmd : npm install and then ng serve
 

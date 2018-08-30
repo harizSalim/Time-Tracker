@@ -74,12 +74,14 @@ export class InprogresssprintComponent implements OnInit {
 
   }
 
+  // Set on hold the sprint
   holdSprint() {
     this.pause = true;
     var pauseTime = new Date();
     this.pauseTimeSec = pauseTime.getHours() * 3600 + pauseTime.getMinutes() * 60 + pauseTime.getSeconds();
   }
 
+  // Resume the paused sprint
   resumeSprint() {
     this.pause = false;
     var resumeTime = new Date();
